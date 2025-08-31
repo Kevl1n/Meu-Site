@@ -2,7 +2,6 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding-top: 60px; /* Adiciona um espaço no topo para o menu fixo */
     background-color: #f4f4f4;
     color: #333;
     line-height: 1.6;
@@ -18,16 +17,17 @@ body {
     color: white;
     padding: 15px 0;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Garante que o menu fique sempre na frente */
 }
 
 /* Estilos para a lista de links no menu */
 .menu ul {
-    list-style-type: none; /* Remove os marcadores de lista */
+    list-style-type: none;
     margin: 0;
     padding: 0;
-    display: flex; /* Alinha os itens lado a lado */
-    justify-content: center; /* Centraliza os itens horizontalmente */
+    display: flex;
+    justify-content: center;
 }
 
 /* Estilos para os itens da lista */
@@ -38,25 +38,22 @@ body {
 /* Estilos para os links */
 .menu a {
     color: white;
-    text-decoration: none; /* Remove o sublinhado */
+    text-decoration: none;
     font-weight: bold;
     font-size: 1.1em;
-    transition: color 0.3s; /* Adiciona uma transição suave para a cor */
+    transition: color 0.3s;
 }
 
 /* Efeito ao passar o mouse sobre os links */
 .menu a:hover {
-    color: #61dafb; /* Cor de destaque para o hover */
+    color: #61dafb;
 }
 
 /* Estilos para o conteúdo principal */
 main {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding-top: 80px; /* Empurra o conteúdo para baixo, criando um espaço para o menu */
+    padding: 50px; /* Mantém o padding original para os lados e inferior */
+    position: relative;
 }
 
 /* Estilos para o rodapé */
@@ -65,4 +62,121 @@ footer {
     padding: 20px 0;
     color: #777;
     margin-top: 20px;
+}
+
+/* Estilos para todas as imagens dentro do conteúdo principal */
+main img {
+    max-width: 100%;
+    width: 800px;
+    height: auto;
+    display: block;
+    margin: 5px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para o grupo de imagens lado a lado */
+.image-row {
+    max-width: 810px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: auto;
+}
+
+/* Estilos para as imagens dentro do grupo */
+.image-row img {
+    width: 260px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para o título H1 na página principal */
+main h1 {
+    text-align: center;
+    font-size: 2.8em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+main p {
+    text-align: center;
+    font-size: 1.2em;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    top: 85px;
+    right: 200px;
+}
+
+/* Estilo NOVO para o formulário de contato */
+form {
+    display: grid;
+    grid-template-columns: 1fr; /* Coloca os elementos em uma única coluna */
+    gap: 15px; /* Espaçamento entre os elementos */
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para os rótulos */
+label {
+    font-weight: bold;
+    color: #444;
+}
+
+/* Estilos para os campos de input e textarea */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    resize: none;
+}
+
+/* Efeito de foco (quando o campo está selecionado) */
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+/* Estilos para o botão de envio */
+button[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Efeito ao passar o mouse sobre o botão */
+button[type="submit"]:hover {
+    background-color: #555;
+    transform: translateY(-2px);
 }
